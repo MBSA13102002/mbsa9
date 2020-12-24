@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://www.programiz.com/java-programming/examples/lexicographical-order-words -->
+<html class="no-js js" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Java Program to Sort Elements in Lexicographical Order (Dictionary Order)</title>
+  <link rel="shortcut icon" href="https://www.programiz.com/sites/all/themes/programiz/assets/favicon.png">
+  <link type="text/css" rel="stylesheet" href="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/css_WSgzCiaLFuERen0TMp4LzgnjcxS3tn-QyZRD85wZ2cs.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/css_botNHIYRQPys-RH2iA3U4LbV9bPNRS64tLAs8ec1ch8.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/css_l1ysxpPHIK3HhRzowKWMrDgNPR_OxenPnqieIpeLj8A.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/css_lJ9ZOdMVGFVWQD3sgHFPyRVV4tG-uikwykL-rxRZsnk.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/css_TF9dO6JLt3t35H3epumP3741KYIKV038vRZgatEiTHY.css" media="all">
+
+  
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.programiz.com/">
+<!--[if IE 9]>
+<link rel="prefetch" href="//cdn.programiz.com" />
+<![endif]-->
+<meta name="description" content="In this program, you&#39;ll learn to sort the element words in lexicographical order using a for loop and if else in Java.">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://www.programiz.com/java-programming/examples/lexicographical-order-words">
+<link rel="shortlink" href="https://www.programiz.com/node/1312">
+<script src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/osd.js.download"></script><script async="" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/apstag.js.download"></script><script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/ads.js.download"></script><script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/mautic-form.js.download"></script><style>.unic{-webkit-font-smoothing:antialiased;line-height:1.15;-webkit-text-size-adjust:100%;box-sizing:border-box;font-family:sans-serif}.unic main{display:block}.unic h1{font-size:2em;margin:.67em 0}.unic hr{box-sizing:content-box;height:0;overflow:visible}.unic pre{font-family:monospace,monospace;font-size:1em}.unic a{background-color:transparent}.unic abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}.unic b,.unic strong{font-weight:bolder}.unic code,.unic kbd,.unic samp{font-family:monospace,monospace;font-size:1em}.unic small{font-size:80%}.unic sub,.unic sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}.unic sub{bottom:-.25em}.unic sup{top:-.5em}.unic img{border-style:none}.unic button,.unic input,.unic optgroup,.unic select,.unic textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}.unic button,.unic input{overflow:visible}.unic button,.unic select{text-transform:none}.unic [type=button],.unic [type=reset],.unic [type=submit],.unic button{-webkit-appearance:button}.unic [type=button]::-moz-focus-inner,.unic [type=reset]::-moz-focus-inner,.unic [type=submit]::-moz-focus-inner,.unic button::-moz-focus-inner{border-style:none;padding:0}.unic [type=button]:-moz-focusring,.unic [type=reset]:-moz-focusring,.unic [type=submit]:-moz-focusring,.unic button:-moz-focusring{outline:1px dotted ButtonText}.unic fieldset{padding:.35em .75em .625em}.unic legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}.unic progress{vertical-align:baseline}.unic textarea{overflow:auto}.unic [type=checkbox],.unic [type=radio]{box-sizing:border-box;padding:0}.unic [type=number]::-webkit-inner-spin-button,.unic [type=number]::-webkit-outer-spin-button{height:auto}.unic [type=search]{-webkit-appearance:textfield;outline-offset:-2px}.unic [type=search]::-webkit-search-decoration{-webkit-appearance:none}.unic ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}.unic details{display:block}.unic summary{display:list-item}.unic [hidden],.unic template{display:none}.unic *,.unic :after,.unic :before{box-sizing:inherit}.unic blockquote,.unic dd,.unic dl,.unic figure,.unic h1,.unic h2,.unic h3,.unic h4,.unic h5,.unic h6,.unic hr,.unic p,.unic pre{margin:0}.unic button{background:transparent;padding:0}.unic button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}.unic fieldset,.unic ol,.unic ul{margin:0;padding:0}.unic ol,.unic ul{list-style:none}.unic *{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji!important;line-height:1.5;font-weight:400;height:auto}.unic *,.unic :after,.unic :before{border:0 solid #e2e8f0}.unic hr{border-top-width:1px}.unic img{border-style:solid}.unic textarea{resize:vertical}.unic input::-webkit-input-placeholder,.unic textarea::-webkit-input-placeholder{color:#a0aec0}.unic input::-moz-placeholder,.unic textarea::-moz-placeholder{color:#a0aec0}.unic input:-ms-input-placeholder,.unic textarea:-ms-input-placeholder{color:#a0aec0}.unic input::-ms-input-placeholder,.unic textarea::-ms-input-placeholder{color:#a0aec0}.unic input::placeholder,.unic textarea::placeholder{color:#a0aec0}.unic [role=button],.unic button{cursor:pointer}.unic table{border-collapse:collapse}.unic h1,.unic h2,.unic h3,.unic h4,.unic h5,.unic h6{font-size:inherit;font-weight:inherit}.unic a{color:inherit;text-decoration:inherit}.unic button,.unic input,.unic optgroup,.unic select,.unic textarea{padding:0;line-height:inherit;color:inherit}.unic code,.unic kbd,.unic pre,.unic samp{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.unic audio,.unic canvas,.unic embed,.unic iframe,.unic img,.unic object,.unic svg,.unic video{display:block;vertical-align:middle}.unic img,.unic video{max-width:100%;height:auto}.unic .container{width:100%}@media (min-width:640px){.unic .container{max-width:640px}}@media (min-width:768px){.unic .container{max-width:768px}}@media (min-width:1024px){.unic .container{max-width:1024px}}@media (min-width:1280px){.unic .container{max-width:1280px}}.unic .bg-white{background-color:#fff}.unic .bg-gray-200{background-color:#edf2f7}.unic .bg-gray-300{background-color:#e2e8f0}.unic .bg-gray-400,.unic .hover\:bg-gray-400:hover{background-color:#cbd5e0}.unic .hover\:bg-gray-600:hover{background-color:#718096}.unic .border-gray-300{border-color:#e2e8f0}.unic .rounded{border-radius:4px}.unic .rounded-full{border-radius:9999px}.unic .rounded-t-lg{border-top-left-radius:8px;border-top-right-radius:8px}.unic .rounded-b-lg{border-bottom-right-radius:8px;border-bottom-left-radius:8px}.unic .border-solid{border-style:solid}.unic .border{border-width:1px}.unic .border-t{border-top-width:1px}.unic .border-r{border-right-width:1px}.unic .border-b{border-bottom-width:1px}.unic .border-l{border-left-width:1px}.unic .cursor-pointer{cursor:pointer}.unic .block{display:block}.unic .inline{display:inline}.unic .flex{display:-webkit-box;display:flex}.unic .hidden{display:none}.unic .flex-row{-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row}.unic .flex-col{-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column}.unic .flex-wrap{flex-wrap:wrap}.unic .items-center{-webkit-box-align:center;align-items:center}.unic .justify-start{-webkit-box-pack:start;justify-content:flex-start}.unic .justify-center{-webkit-box-pack:center;justify-content:center}.unic .justify-between{-webkit-box-pack:justify;justify-content:space-between}.unic .flex-1{-webkit-box-flex:1;flex:1 1 0%}.unic .flex-auto{-webkit-box-flex:1;flex:1 1 auto}.unic .font-sans{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.unic .font-bold{font-weight:700}.unic .h-3{height:12px}.unic .h-4{height:16px}.unic .h-5{height:20px}.unic .h-32{height:128px}.unic .h-40{height:160px}.unic .h-64{height:256px}.unic .h-full{height:100%}.unic .m-2{margin:8px}.unic .m-auto{margin:auto}.unic .mx-0{margin-left:0;margin-right:0}.unic .mx-1{margin-left:4px;margin-right:4px}.unic .mx-2{margin-left:8px;margin-right:8px}.unic .mt-2{margin-top:8px}.unic .mb-2{margin-bottom:8px}.unic .ml-4{margin-left:16px}.unic .mt-auto{margin-top:auto}.unic .ml-auto{margin-left:auto}.unic .max-h-full{max-height:100%}.unic .object-scale-down{-o-object-fit:scale-down;object-fit:scale-down}.unic .outline-none{outline:0}.unic .overflow-scroll{overflow:scroll}.unic .overflow-x-hidden{overflow-x:hidden}.unic .p-1{padding:4px}.unic .p-2{padding:8px}.unic .p-4{padding:16px}.unic .p-6{padding:24px}.unic .py-1{padding-top:4px;padding-bottom:4px}.unic .py-2{padding-top:8px;padding-bottom:8px}.unic .px-2{padding-left:8px;padding-right:8px}.unic .px-4{padding-left:16px;padding-right:16px}.unic .pb-0{padding-bottom:0}.unic .pr-2{padding-right:8px}.unic .pb-2{padding-bottom:8px}.unic .pt-4{padding-top:16px}.unic .static{position:static}.unic .fixed{position:fixed}.unic .absolute{position:absolute}.unic .relative{position:relative}.unic .inset-y-0{top:0;bottom:0}.unic .top-0{top:0}.unic .right-0{right:0}.unic .bottom-0{bottom:0}.unic .left-0{left:0}.unic .shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.unic .shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)}.unic .shadow-inner{box-shadow:inset 0 2px 4px 0 rgba(0,0,0,.06)}.unic .text-center{text-align:center}.unic .text-black{color:#000}.unic .text-gray-700{color:#4a5568}.unic .text-gray-800{color:#2d3748}.unic .hover\:text-white:hover{color:#fff}.unic .text-xs{font-size:12px}.unic .text-sm{font-size:14px}.unic .text-lg{font-size:18px}.unic .text-xl{font-size:20px}.unic .underline{text-decoration:underline}.unic .antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.unic .align-middle{vertical-align:middle}.unic .w-5{width:20px}.unic .w-10{width:40px}.unic .w-32{width:128px}.unic .w-1\/3{width:33.333333%}.unic .w-full{width:100%}.unic .z-40{z-index:40}.unic .z-50{z-index:50}@media (min-width:768px){.unic .md\:flex-row{-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row}.unic .md\:flex-1{-webkit-box-flex:1;flex:1 1 0%}.unic .md\:h-64{height:256px}.unic .md\:h-auto{height:auto}.unic .md\:mx-2{margin-left:8px;margin-right:8px}.unic .md\:mx-3{margin-left:12px;margin-right:12px}.unic .md\:max-w-2xl{max-width:672px}.unic .md\:pl-4{padding-left:16px}.unic .md\:text-base{font-size:16px}.unic .md\:text-xl{font-size:20px}.unic .md\:w-1\/2{width:50%}.unic .md\:w-1\/4{width:25%}}div.unic ::-webkit-scrollbar{display:none}.unic{font-size:14px;color:rgba(0,0,0,.76);-ms-overflow-style:none;overflow:auto}.unic .h24{height:24px}.unic label{width:auto}.unic .svg{height:100%}.unic :focus{outline:thin dotted}.unic-bg{background-color:hsla(0,.5%,41%,.75)}.unic .toggle__dot{top:-4px;left:-4px;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}.unic input:checked~.toggle__dot{-webkit-transform:translateX(120%);transform:translateX(120%);background-color:#48bb78!important}#uniccmp{z-index:2147483639}#uniccmp-badge,.unic-badge{z-index:2147483638}.unic-badge{width:30px;height:30px;padding:5px;display:block;outline:none;position:fixed;left:10px;bottom:10px;border-radius:2px;border-radius:4px;background-image:linear-gradient(37deg,#c7c7c7,#e0e0e0);cursor:pointer}</style><link rel="stylesheet" type="text/css" href="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/modal.min.css"><script async="" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/Programizcomnew.min.js.download"></script><script src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/gpt.js.download"></script><script src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/pubads_impl_2020102901.js.download" async=""></script><link rel="preload" href="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/f.txt" as="script"><script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/f.txt"></script><link rel="preload" href="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/f(1).txt" as="script"><script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/f(1).txt"></script><link rel="prefetch" href="https://6288204a0588554eca5195df9e66185c.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html"></head><body style=""><div id="uniccmp"></div>=<script type="text/javascript" async="" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-SS+OeDJ4CcZg97ex2AvGl8QIn/uPkVcaPM2HZJbuLiaCL4dwfagBbS93RwDaffim"></script><script async="" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/analytics.js.download"></script><script src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/123000288571689" async=""></script><script async="" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/fbevents.js.download"></script><script src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/stub.min.js.download"></script><iframe name="__tcfapiLocator" style="display: none;" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/saved_resource.html"></iframe><iframe name="__uspapiLocator" style="display: none;" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/saved_resource(1).html"></iframe>
+<script async="" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/cmp.js.download"></script>
+<script type="text/javascript">
+    window.googletag = window.googletag || {};
+    window.googletag.cmd = window.googletag.cmd || [];
+    window.googletag.cmd.push(function () {
+        window.googletag.pubads().enableAsyncRendering();
+        window.googletag.pubads().disableInitialLoad();
+    });
+    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+</script>
+<script>
+    __tcfapi("addEventListener", 2, function (tcData, success) {
+        if (success && tcData.unicLoad === true) {
+            if (!window._initAds) {
+                window._initAds = true;
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = '//dsh7ky7308k4b.cloudfront.net/publishers/Programizcomnew.min.js';
+                document.head.appendChild(script);
+
+                try {
+                    fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function (response) {
+                        return true;
+                    }).catch(function (e) {
+                        document.getElementsByClassName("content-top-ad")[0].style.display = "none";
+                        var ad_elements = document.getElementsByClassName("pub-ad");
+                        while (ad_elements.length > 0) {
+                            ad_elements[0].parentNode.removeChild(ad_elements[0]);
+                        }
+                        var carbonScript = document.createElement("script");
+                        carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CKYDL27L&placement=wwwprogramizcom";
+                        carbonScript.id = "_carbonads_js";
+                        document.getElementById("carbon-block").appendChild(carbonScript);
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        }
+    });
+</script>
+<style>.pub-ad{z-index:0;clear:both;position:relative;text-align:center}.pub-ad::before{content:'ADVERTISEMENTS';display:block;position:absolute;top:-20px;left:0;right:0;height:20px;font-size:9px;line-height:20px;letter-spacing:1px;color:#bcbfc5}</style>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '123000288571689');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=123000288571689&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+  <script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/jquery-1.10.2.min.js.download"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/js_dWhBODswdXXk1M5Z5nyqNfGljmqwxUwAK9i6D0YSDNs.js.download"></script>
+<script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/js_BLxotNs2yt7YGlf9QRI9L9AMfdnkQfnN-_ADBTW3SiE.js.download"></script>
+<script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/js_0EDobzbOeU8CmSVIjKwmqfmTC9h43DFxyiWtQ95qYKQ.js.download"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var base_path = '/'; var module_path = 'sites/all/modules/programiz_rate_share';
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/js_JPRsqb7LGxvd6bG_O6mGsgDWYtmjHoO0CWqFMo8cxvY.js.download"></script>
+<script type="text/javascript" defer="defer" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/api.js.download"></script>
+<script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/js_lTSXWzq4cICkyKNPfLUR-wFRO5c0j3BzGIXfenk0WIk.js.download"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-36675496-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/js_ZtJPnJ19wXPK7-IJwuwvR54Vt1sBR9k59lOmJVYn_kE.js.download"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"programiz","theme_token":"gweCmfdVRk2jxrnKiPgQN_HGXsBV9KuQNlDP86rNA3o","jquery_version":"1.10","js":{"\/\/code.jquery.com\/jquery-1.10.2.min.js":1,"0":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/programiz_rate_share\/programiz_rate_share.js":1,"1":1,"sites\/all\/modules\/captcha\/captcha.js":1,"https:\/\/www.google.com\/recaptcha\/api.js?hl=en":1,"misc\/textarea.js":1,"misc\/progress.js":1,"sites\/all\/modules\/webform\/js\/webform.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/themes\/programiz\/dist\/main.min.js":1,"sites\/all\/themes\/programiz\/lib\/highlightjs\/highlight.min.js":1,"sites\/all\/themes\/programiz\/lib\/mautic\/mautic.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/webform\/css\/webform.css":1,"sites\/all\/themes\/programiz\/lib\/highlightjs\/highlight.min.css":1,"sites\/all\/themes\/programiz\/lib\/mautic\/mautic.css":1,"sites\/all\/themes\/programiz\/dist\/main.css":1}},"better_exposed_filters":{"views":{"related_examples_c_cpp_python_r_":{"displays":{"block_4":{"filters":[]}}},"similar_python_programming_examples":{"displays":{"block_3":{"filters":[]}}}}},"ajax":{"edit-submit":{"callback":"page_feedback_webform_ajax_validate","wrapper":"webform-client-form-1680","progress":{"type":"throbber"},"event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Submit"}}},"urlIsAjaxTrusted":{"\/system\/ajax":true,"\/java-programming\/examples\/lexicographical-order-words":true},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});
+//--><!]]>
+</script>
+
+
+
+    
+<main class="soft-bg fixed-nav">
+  <header class="main-nav d-flex flex-column justify-content-center main-nav--fixed">
+            
+    
+    
+    
+    <div class="notice-bar-top d-none d-md-block hide--forced">
+  <div class="container">
+    <div class="notice-bar-top__message-wrapper">
+      <span class="tag-border-less tag-border-less--orange">NEW</span>
+      <p class="notice-bar-top__message">
+        <!--<a class="notice-bar-top__message--link" href="/learn-python/programiz-pro?ref=notice-bar" title="Programiz Pro is here!" target="_blank">Programiz Pro is here! Get distraction-free learning on the app. <svg class="programiz-icon notice-bar-top__message__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-right"></use></svg></a>-->
+        <a class="notice-bar-top__message--link" href="https://www.youtube.com/c/Programiz-studios" title="Python Basics Video Course now on Youtube! Watch Now." target="_blank">Python Basics Video Course now on Youtube! Watch Now. <svg class="programiz-icon notice-bar-top__message__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-right"></use></svg></a>
+      </p>
+    </div>
+  </div>
+</div>
+
+        
+    <nav>
+      <div class="container flex-1">
+        <div class="d-flex align-items-center p-relative">
+          <button class="main-nav__menu-btn d-lg-none d-flex">
+            <svg class="programiz-icon">
+              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#menu"></use>
+            </svg>
+          </button>
+
+          <div class="brand">
+            <a href="https://www.programiz.com/" title="Programiz">
+              <img class="d-lg-none" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/sp_logo.svg" alt="Programiz">
+              <img class="d-none d-lg-block" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/pc_logo.svg" alt="Programiz">
+            </a>
+          </div>
+
+                      <div class="navigation d-none d-lg-flex align-items-center">
+                
+    
+    
+    
+    <a title="Programming Tutorials" href="https://www.programiz.com/java-programming/examples/lexicographical-order-words#" class="navigation__node">
+  <span class="navigation__node__label">
+    Tutorials
+  </span>
+  <svg class="programiz-icon programiz-icon--smallest navigation__node__icon">
+    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-down"></use>
+  </svg>
+</a>
+
+<a title="Programming Examples" href="javascript:void(0);" class="navigation__node">
+  <span class="navigation__node__label">
+    Examples
+  </span>
+  <svg class="programiz-icon programiz-icon--smallest navigation__node__icon">
+    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-down"></use>
+  </svg>
+</a>
+
+                </div>
+          
+                        
+    
+    
+    
+    <form action="https://www.programiz.com/java-programming/examples/lexicographical-order-words" method="post" id="search-api-page-search-form-simplest-programming-tutorials-f" accept-charset="UTF-8"><div><div class="search-input search-api-page-search-form-simplest-programming-tutorials-f"><button type="submit" class="search-input__form-submit" hidden=""></button><button type="\&quot;button\&quot;" class="search-input__clear btn"><svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button><button type="\&quot;button\&quot;" class="btn btn--clear c-default"><svg class="programiz-icon programiz-icon--small search-input__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#search"></use></svg></button><input type="text" value="" placeholder="Search tutorials and examples" id="edit-keys-2" name="keys_2" class="search-input__control" autocomplete="off"><input type="hidden" name="id" value="2"><input type="hidden" name="form_build_id" value="form-kE3WuTgt786RGgXIPf2Jhen3yu9QLe2yOgSHN_VQt5M"><input type="hidden" name="form_id" value="search_api_page_search_form_simplest_programming_tutorials_f"></div></div></form>
+              
+        </div>
+      </div>
+
+      <!-- Only on page.tpl.php -->
+      <!-- Show progress bar as the user scrolls the page for tutorials, examples and methods individual pages -->
+      <div class="main-nav__progress-bar-wrapper" style="display: block;">
+        <div class="progress-bar" style="width: 16%;"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Tutorials and Examples contents -->
+  <div class="sub-menu--backdrop"></div>
+        
+    
+    
+    
+    
+<!-- Mobile view -->
+<div class="sub-menu sub-menu--sp sub-menu--sp--tutorial-examples">
+  <div class="sub-menu__wrap">
+    <div class="sub-menu__head">
+      <div class="sub-menu__tab">
+        <div class="sub-menu__tab__head">
+          <button class="sub-menu__tab__node sub-menu__tab__node--index sub-menu__tab__node--active">
+            <!-- Change the title dynamically -->
+            Course Index
+          </button>
+          <button class="sub-menu__tab__node sub-menu__tab__node--explore">
+            Explore Programiz
+          </button>
+        </div>
+        <div class="sub-menu__tab__body sub-menu__tab__body--index" style="display: none;"></div>
+        <div class="sub-menu__tab__body sub-menu__tab__body--explore" style="display: none;">
+                      <a href="javascript:void(0);" title="Python" class="sub-menu__tab__list-node " data-language="python">Python</a>
+                      <a href="javascript:void(0);" title="JavaScript" class="sub-menu__tab__list-node " data-language="javascript">JavaScript</a>
+                      <a href="javascript:void(0);" title="C" class="sub-menu__tab__list-node " data-language="c">C</a>
+                      <a href="javascript:void(0);" title="C++" class="sub-menu__tab__list-node " data-language="cpp">C++</a>
+                      <a href="javascript:void(0);" title="Java" class="sub-menu__tab__list-node sub-menu__tab__list-node--active" data-language="java">Java</a>
+                      <a href="javascript:void(0);" title="Kotlin" class="sub-menu__tab__list-node " data-language="kotlin">Kotlin</a>
+                      <a href="javascript:void(0);" title="Swift" class="sub-menu__tab__list-node " data-language="swift">Swift</a>
+                      <a href="javascript:void(0);" title="C#" class="sub-menu__tab__list-node " data-language="csharp">C#</a>
+                      <a href="javascript:void(0);" title="DSA" class="sub-menu__tab__list-node " data-language="dsa">DSA</a>
+                  </div>
+      </div>
+
+      <button class="btn btn--skeleton menu-hide-trigger">
+        <svg class="programiz-icon">
+          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="tabbed-content tabbed-content--no-border">
+      <div class="tabbed-content__right tabbed-content__right--index">
+      <div class="card-alt mb-10x d-block mobile-sidebar-tab"><h3>Java Examples</h3><div class="list list--active-right">    <ul>          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/leap-year">Check Leap Year </a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/positive-negative">Check Whether a Number is Positive or Negative</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/alphabet">Check Whether a Character is Alphabet or Not</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/sum-natural-numbers">Calculate the Sum of Natural Numbers</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/factorial">Find Factorial of a Number</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/multiplication-table">Generate Multiplication Table</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/fibonacci-series">Display Fibonacci Series</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/hcf-gcd">Find GCD of two Numbers</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/lcm">Find LCM of two Numbers</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/display-alphabets">Display Characters from A to Z using loop</a></span>  </div></li>
+      </ul></div></div>    </div>
+      <div class="tabbed-content__right tabbed-content__right--explore" style="display: none;">
+        <div class="sub-menu__contents sub-menu__contents--java" id="m-java">
+          <div class="sub-menu__cta">
+                        <a href="https://www.programiz.com/java-programming" title="Java Tutorials" class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md">
+              <span for="" class="btn__label">Start Learning Java</span>
+              <svg class="programiz-icon ml-2x">
+                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+              </svg>
+            </a>
+            
+                        <a href="https://www.programiz.com/java-programming/examples" title="Java Examples" class="btn btn--primary btn--xlarge d-flex align-items-center mb-5x mb-0x-md">
+              <span for="" class="btn__label">Explore Java Examples</span>
+              <svg class="programiz-icon ml-2x">
+                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+              </svg>
+            </a>
+                      </div>
+
+          <div class="sub-menu__links">
+            <!-- Popular tutorials -->
+                          <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Java &quot;Hello World&quot; Program" href="https://www.programiz.com/java-programming/hello-world" class="sub-menu__link__column">Java "Hello World" Program</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Java for Loop" href="https://www.programiz.com/java-programming/for-loop" class="sub-menu__link__column">Java for Loop</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Arrays in Java" href="https://www.programiz.com/java-programming/arrays" class="sub-menu__link__column">Arrays in Java</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Interfaces in Java" href="https://www.programiz.com/java-programming/class-objects" class="sub-menu__link__column">Interfaces in Java</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Java ArrayList" href="https://www.programiz.com/java-programming/arraylist" class="sub-menu__link__column">Java ArrayList</a>
+                      </div>
+                    </div>
+                                  </div>
+              </div>
+            
+            <!-- Popular examples -->
+                          <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                <div class="sub-menu__link">
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Check prime number" href="https://www.programiz.com/java-programming/examples/prime-number" class="sub-menu__link__column">Check prime number</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Print the Fibonacci series" href="https://www.programiz.com/java-programming/examples/fibonacci-series" class="sub-menu__link__column">Print the Fibonacci series</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Print Pyramids and Patterns" href="https://www.programiz.com/java-programming/examples/pyramid-pattern" class="sub-menu__link__column">Print Pyramids and Patterns</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Multiply two matrices" href="https://www.programiz.com/java-programming/examples/multiplication-table" class="sub-menu__link__column">Multiply two matrices</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a title="Find the standard deviation" href="https://www.programiz.com/java-programming/examples/standard-deviation" class="sub-menu__link__column">Find the standard deviation</a>
+                      </div>
+                    </div>
+                                  </div>
+              </div>
+            
+            <!-- Reference materials -->
+                          <div class="sub-menu__links__column sub-menu__links__column--right">
+                <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                <div class="sub-menu__link">
+                                      <div class="sub-menu__link__row">
+                      <a href="https://www.programiz.com/java-programming/library/string" title="String" class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                        String                        <svg class="programiz-icon programiz-icon--small ml-auto">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <a href="https://www.programiz.com/java-programming/library/arraylist" title="ArrayList" class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                        ArrayList                        <svg class="programiz-icon programiz-icon--small ml-auto">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <a href="https://www.programiz.com/java-programming/library/hashmap" title="HashMap" class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                        HashMap                        <svg class="programiz-icon programiz-icon--small ml-auto">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <a href="https://www.programiz.com/java-programming/library/math" title="Math" class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                        Math                        <svg class="programiz-icon programiz-icon--small ml-auto">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  
+                  <a title="Java References" href="https://www.programiz.com/java-programming/library" class="d-flex align-items-center font-weight-500">
+                    View all
+                    <svg class="programiz-icon programiz-icon--small ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Desktop view -->
+<div class="sub-menu sub-menu--pc sub-menu--pc--tutorial">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-10">
+        <div class="sub-menu__wrap">
+          <div class="tabbed-content tabbed-content--no-border">
+            <div class="tabbed-content__left tabbed-content__left--small">
+              <div class="tabbed-link-container">
+                                  <div class="tabbed-link">
+                    <a title="Python" href="javascript:void(0);" class="tabbed-link__node " data-language="python">
+                      Python                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="JavaScript" href="javascript:void(0);" class="tabbed-link__node " data-language="javascript">
+                      JavaScript                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="C" href="javascript:void(0);" class="tabbed-link__node " data-language="c">
+                      C                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="C++" href="javascript:void(0);" class="tabbed-link__node " data-language="cpp">
+                      C++                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="Java" href="javascript:void(0);" class="tabbed-link__node tabbed-link__node--active" data-language="java">
+                      Java                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="Kotlin" href="javascript:void(0);" class="tabbed-link__node " data-language="kotlin">
+                      Kotlin                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="Swift" href="javascript:void(0);" class="tabbed-link__node " data-language="swift">
+                      Swift                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="C#" href="javascript:void(0);" class="tabbed-link__node " data-language="csharp">
+                      C#                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="DSA" href="javascript:void(0);" class="tabbed-link__node " data-language="dsa">
+                      DSA                    </a>
+                  </div>
+                              </div>
+            </div>
+            <div class="tabbed-content__right">
+              <div class="sub-menu__contents sub-menu__contents--java" id="t-java">
+                <div class="sub-menu__cta">
+                  <a class="btn btn--primary btn--xlarge d-flex align-items-center" title="Java Tutorials" href="https://www.programiz.com/java-programming">
+                    <span for="" class="btn__label">Start Learning Java</span>
+                    <svg class="programiz-icon ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                  <button class="btn btn--skeleton ml-auto">
+                    <svg class="programiz-icon">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="sub-menu__links">
+                  <!-- Popular tutorials -->
+                                      <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a title="Java &quot;Hello World&quot; Program" href="https://www.programiz.com/java-programming/hello-world" class="sub-menu__link__column">Java "Hello World" Program</a>
+                            </div>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a title="Java for Loop" href="https://www.programiz.com/java-programming/for-loop" class="sub-menu__link__column">Java for Loop</a>
+                            </div>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a title="Arrays in Java" href="https://www.programiz.com/java-programming/arrays" class="sub-menu__link__column">Arrays in Java</a>
+                            </div>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a title="Interfaces in Java" href="https://www.programiz.com/java-programming/class-objects" class="sub-menu__link__column">Interfaces in Java</a>
+                            </div>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a title="Java ArrayList" href="https://www.programiz.com/java-programming/arraylist" class="sub-menu__link__column">Java ArrayList</a>
+                            </div>
+                          </div>
+                                              </div>
+                      <a title="Java tutorials" href="https://www.programiz.com/java-programming" class="d-flex align-items-center font-weight-500">
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  
+                  <!-- Reference materials -->
+                                      <div class="sub-menu__links__column sub-menu__links__column--right">
+                      <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                      <div class="sub-menu__link">
+                        
+                                                  <div class="sub-menu__link__row">
+                            <a title="String" href="https://www.programiz.com/java-programming/library/string" class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                              String                              <svg class="programiz-icon programiz-icon--small ml-auto">
+                                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                              </svg>
+                            </a>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <a title="ArrayList" href="https://www.programiz.com/java-programming/library/arraylist" class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                              ArrayList                              <svg class="programiz-icon programiz-icon--small ml-auto">
+                                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                              </svg>
+                            </a>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <a title="HashMap" href="https://www.programiz.com/java-programming/library/hashmap" class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                              HashMap                              <svg class="programiz-icon programiz-icon--small ml-auto">
+                                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                              </svg>
+                            </a>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <a title="Math" href="https://www.programiz.com/java-programming/library/math" class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                              Math                              <svg class="programiz-icon programiz-icon--small ml-auto">
+                                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                              </svg>
+                            </a>
+                          </div>
+                                              </div>
+                      <a title="Java References" href="https://www.programiz.com/java-programming/library" class="d-flex align-items-center font-weight-500">
+                        View all
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+        
+    
+    
+    
+    
+<!-- Desktop view only -->
+<div class="sub-menu sub-menu--pc sub-menu--pc--examples">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-10">
+        <div class="sub-menu__wrap">
+          <div class="tabbed-content tabbed-content--no-border">
+            <div class="tabbed-content__left tabbed-content__left--small">
+
+              <div class="tabbed-link-container">
+                                  <div class="tabbed-link">
+                    <a title="Python" href="javascript:void(0);" class="tabbed-link__node " data-language="python">Python</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="JavaScript" href="javascript:void(0);" class="tabbed-link__node " data-language="javascript">JavaScript</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="C" href="javascript:void(0);" class="tabbed-link__node " data-language="c">C</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="C++" href="javascript:void(0);" class="tabbed-link__node " data-language="cpp">C++</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="Java" href="javascript:void(0);" class="tabbed-link__node tabbed-link__node--active" data-language="java">Java</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a title="Kotlin" href="javascript:void(0);" class="tabbed-link__node " data-language="kotlin">Kotlin</a>
+                  </div>
+                              </div>
+
+            </div>
+            <div class="tabbed-content__right">
+              <div class="sub-menu__contents sub-menu__contents--java" id="examples-java">
+                <div class="sub-menu__cta">
+                  <a href="https://www.programiz.com/java-programming/examples" title="Java Examples" class="btn btn--primary btn--xlarge d-flex align-items-center">
+                    <span for="" class="btn__label">Explore Java Examples</span>
+                    <svg class="programiz-icon ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                  <button class="btn btn--skeleton ml-auto">
+                    <svg class="programiz-icon">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="sub-menu__links">
+                  <div class="sub-menu__links__column sub-menu__links__column--left">
+                    <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                    <div class="sub-menu__link">
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Check prime number" href="https://www.programiz.com/java-programming/examples/prime-number" class="sub-menu__link__column">Check prime number</a>
+                        </div>
+                      </div>
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Print the Fibonacci series" href="https://www.programiz.com/java-programming/examples/fibonacci-series" class="sub-menu__link__column">Print the Fibonacci series</a>
+                        </div>
+                      </div>
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Print Pyramids and Patterns" href="https://www.programiz.com/java-programming/examples/pyramid-pattern" class="sub-menu__link__column">Print Pyramids and Patterns</a>
+                        </div>
+                      </div>
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Multiply two matrices" href="https://www.programiz.com/java-programming/examples/multiplication-table" class="sub-menu__link__column">Multiply two matrices</a>
+                        </div>
+                      </div>
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Find the standard deviation" href="https://www.programiz.com/java-programming/examples/standard-deviation" class="sub-menu__link__column">Find the standard deviation</a>
+                        </div>
+                      </div>
+                                          </div>
+                    <a title="Java Examples" href="https://www.programiz.com/java-programming/examples" class="d-flex align-items-center font-weight-500">
+                      View all examples
+                      <svg class="programiz-icon programiz-icon--small ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+  <!-- Get app link -->
+        
+  <div class="contents">
+    <div class="container">
+
+      
+      <div class="row">
+        <div class="col-sm-12 d-md-flex">
+
+                      <div class="left-bar left-bar--large-r-margin d-none d-lg-block">
+                
+    
+    
+    
+    <div class="view view-related-examples-c-cpp-python-r- view-id-related_examples_c_cpp_python_r_ view-display-id-block_4 views-sidebar view-dom-id-83494a4fa7ac216c9cf0e21e5e38e2ef">
+        
+  
+  
+      <div class="view-content">
+      <div class="card-alt mb-10x d-block mobile-sidebar-tab"><h3>Java Examples</h3><div class="list list--active-right">    <ul>          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/leap-year">Check Leap Year </a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/positive-negative">Check Whether a Number is Positive or Negative</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/alphabet">Check Whether a Character is Alphabet or Not</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/sum-natural-numbers">Calculate the Sum of Natural Numbers</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/factorial">Find Factorial of a Number</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/multiplication-table">Generate Multiplication Table</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/fibonacci-series">Display Fibonacci Series</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/hcf-gcd">Find GCD of two Numbers</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/lcm">Find LCM of two Numbers</a></span>  </div></li>
+          <li class="">  
+  <div>        <span><a href="https://www.programiz.com/java-programming/examples/display-alphabets">Display Characters from A to Z using loop</a></span>  </div></li>
+      </ul></div></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>
+    
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom36792 {display:none; }
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36792 {display: block;} }
+    </style>
+    
+    <div id="div-gpt-ad-Programizcom36792" class="pub-ad" style="width:300px; min-height: 250px; margin: 40px 0;" data-google-query-id="CJGOw9_n5ewCFaOcSwUd8CkH9w">
+    <div id="google_ads_iframe_/8095840/.2_A.36792.4_Programiz.com_tier1_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/container.html" id="google_ads_iframe_/8095840/.2_A.36792.4_Programiz.com_tier1_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="5" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>
+    
+    
+    
+    
+    <div id="mauticform_wrapper_javasubscribersform" class="mauticform_wrapper">
+  <form autocomplete="false" role="form" method="post" action="https://email.programiz.com/form/submit?formId=11" id="mauticform_javasubscribersform" data-mautic-form="javasubscribersform" enctype="multipart/form-data" class="card-alt card-alt--even-spaced mb-10x" target="mauticiframe_javasubscribersform">
+    <div class="mauticform-error" id="mauticform_javasubscribersform_error"></div>
+    <div class="mauticform-message" id="mauticform_javasubscribersform_message"></div>
+    <div class="mauticform-innerform">
+      <div class="card-alt__form-title">Join our newsletter for the latest updates.</div>
+      <div class="mauticform-page-wrapper mauticform-page-1 input-group" data-mautic-form-page="1">
+        <div id="mauticform_javasubscribersform_email1" class="mauticform-row mauticform-email mauticform-field-1 mauticform-required input-group" data-validate="email1" data-validation-type="email">
+            <input id="mauticform_input_javasubscribersform_email1" name="mauticform[email1]" value="" placeholder="Enter Email Address*" class="mauticform-input input-group__control" type="email">
+            <span class="mauticform-errormsg" style="display: none;">This is required.</span>
+        </div>
+        <div id="mauticform_javasubscribersform_submit" class="mauticform-row mauticform-button-wrapper mauticform-field-2 input-group">
+            <button type="submit" name="mauticform[submit]" id="mauticform_input_javasubscribersform_submit" value="" class="mauticform-button input-group__action btn btn--primary">Join</button>
+        </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="mauticform[formId]" id="mauticform_javasubscribersform_id" value="11">
+    <input type="hidden" name="mauticform[return]" id="mauticform_javasubscribersform_return" value="">
+    <input type="hidden" name="mauticform[formName]" id="mauticform_javasubscribersform_name" value="javasubscribersform">
+
+  <input type="hidden" name="mauticform[messenger]" id="mauticform_javasubscribersform_messenger" value="1"></form>
+</div>
+    
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom36787 {display:none; }
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36787 {display: block; max-width: 300px; margin: 40px auto;} }
+    </style>
+    
+    <div class="pub-ad">
+    <div id="div-gpt-ad-Programizcom36787" class="sticky-sidebar-advertisement" data-google-query-id="CI6Ow9_n5ewCFaOcSwUd8CkH9w" style="position: inherit; top: inherit; bottom: inherit; max-width: 300px;">
+    <div id="google_ads_iframe_/8095840/.2_A.36787.4_Programiz.com_tier1_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 600px;"><iframe frameborder="0" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/container(1).html" id="google_ads_iframe_/8095840/.2_A.36787.4_Programiz.com_tier1_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="600" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="2" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>
+    </div>
+                </div>
+          
+          <div class="right-bar">
+
+            
+
+                            
+    
+    
+    
+    <div class="breadcumb mt-0x"><div class="breadcumb__node"><a class="breadcumb__link" href="https://www.programiz.com/java-programming"><svg class="programiz-icon programiz-icon--small breadcumb__link__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#home"></use></svg><span class="breadcumb__label">Java Programming</span></a></div><div class="breadcumb__node"><a class="breadcumb__link" href="https://www.programiz.com/java-programming/examples"><span class="breadcumb__label">Examples</span></a></div><span class="breadcumb__link"><span class="breadcumb__label">Java Program to Sort Elements in Lexicographical Order (Dictionary Order)</span></span></div><div class="breadcumb mt-0x dummy-breadcumb" style="display: none;"><div class="breadcumb__node"><a class="breadcumb__link" href="https://www.programiz.com/java-programming"><svg class="programiz-icon programiz-icon--small breadcumb__link__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#home"></use></svg><span class="breadcumb__label">Java Programming</span></a></div><div class="breadcumb__node"><a class="breadcumb__link" href="https://www.programiz.com/java-programming/examples"><span class="breadcumb__label">Examples</span></a></div><span class="breadcumb__link"><span class="breadcumb__label">Java Program to Sort Elements in Lexicographical Order (Dictionary Order)</span></span></div>
+                
+            <div class="editor-contents">
+                              <h1>Java Program to Sort Elements in Lexicographical Order (Dictionary Order)</h1>
+              
+              
+                              <h4>In this program, you'll learn to sort the element words in lexicographical order using a for loop and if else in Java.</h4>
+              
+                                
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom36791 {display:none; }
+    #div-gpt-ad-Programizcom36795 {display: block;}
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36791 {display: block;} #div-gpt-ad-Programizcom36795 {display: none;}}
+    </style>
+    
+    <div id="div-gpt-ad-Programizcom36791" class="pub-ad content-top-ad" style="height:90px; width:728px; margin: 42px 0;" data-google-query-id="CJCOw9_n5ewCFaOcSwUd8CkH9w">
+    <div id="google_ads_iframe_/8095840/.2_A.36791.3_Programiz.com_tier1_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/container(2).html" id="google_ads_iframe_/8095840/.2_A.36791.3_Programiz.com_tier1_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="4" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>
+    
+    <div id="div-gpt-ad-Programizcom36795" class="pub-ad content-top-ad" style="width:300px; margin: 42px 0;">
+    </div>
+    
+    
+    
+    
+    <style>#carbonads{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;--width:728px;--font-size:22px}#carbonads{display:block;overflow:hidden;max-width:var(--width);position:relative;background-color:#fcfcfc;border:solid 1px #eee;font-size:var(--font-size);box-sizing:border-box;margin:36px 0 36px 0}.detail #carbonads{margin-top:12px}#carbonads a{color:inherit;text-decoration:none}#carbonads a:hover{color:inherit}.carbon-wrap{display:flex;align-items:center}carbon-img{display:block;float:left;margin:0;max-width:var(--width);line-height:1}.carbon-img img{display:block;margin:0;height:90px;width:auto}.carbon-text{display:block;float:left;padding:0 1em;line-height:1.35;max-width:calc(100% - 130px - 2em);text-align:left}.carbon-poweredby{display:block;position:absolute;bottom:0;right:0;padding:6px 10px;background:repeating-linear-gradient(-45deg,transparent,transparent 5px,hsla(0,0%,0%,.025) 5px,hsla(0,0%,0%,.025) 10px) hsla(203,11%,95%,.8);text-align:center;text-transform:uppercase;letter-spacing:.5px;font-weight:600;font-size:8px;border-top-left-radius:4px;line-height:1}@media only screen and (min-width:320px) and (max-width:759px){.carbon-text{font-size:14px}}</style>
+
+<div id="carbon-block"></div>
+                  
+              <p>To understand this example, you should have the knowledge of the following <a href="https://www.programiz.com/java-programming" title="Java tutorial">Java programming</a> topics:</p><ul><li><a href="https://www.programiz.com/java-programming/for-loop">Java for Loop</a></li><li><a href="https://www.programiz.com/java-programming/if-else-statement">Java if...else Statement</a></li><li><a href="https://www.programiz.com/java-programming/string">Java String</a></li></ul><hr>
+                                
+    
+    
+    
+    <div id="node-1312" class="node node-java-example clearfix" about="/java-programming/examples/lexicographical-order-words" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="Java Program to Sort Elements in Lexicographical Order (Dictionary Order)" class="rdf-meta element-hidden"></span>
+  
+  <div class="content">
+      <h2>Example: Program to Sort Strings in Dictionary Order</h2>
+
+<pre style="max-height: 600px;"><code class="java hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sort</span> </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    String[] words = { <span class="hljs-string">"Ruby"</span>, <span class="hljs-string">"C"</span>, <span class="hljs-string">"Python"</span>, <span class="hljs-string">"Java"</span> };
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i) {
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; <span class="hljs-number">4</span>; ++j) {
+        <span class="hljs-keyword">if</span> (words[i].compareTo(words[j]) &gt; <span class="hljs-number">0</span>) {
+
+          <span class="hljs-comment">// swap words[i] with words[j[</span>
+          String temp = words[i];
+          words[i] = words[j];
+          words[j] = temp;
+        }
+      }
+    }
+
+    System.out.println(<span class="hljs-string">"In lexicographical order:"</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) {
+      System.out.println(words[i]);
+    }
+  }
+}</code></pre>
+
+<p><strong>Output</strong></p>
+
+<pre><samp>In lexicographical order:
+C
+Java
+Python
+Ruby</samp></pre>
+
+<p>In the above program, the list of 5 words to sorted is stored in a variable, words.</p>
+
+<p>Then, we loop through each word (words[i]) and compare it with all words (words[j]) after it in the array. This is done by using the string's compareTo() method.</p>
+
+<p>If the return value of compareTo() is greater than 0, it has to be swapped in position, i.e. words[i] comes after words[j]. So, in each iteration, words[i] contains the earliest word.</p>
+
+<div class="table-responsive"><table summary="Lexicographical sorting steps in Java" border="0">
+	<caption>Execution Steps</caption>
+	<thead>
+		<tr>
+			<th scope="col">Iteration</th>
+			<th scope="col">Initial words</th>
+			<th scope="col">i</th>
+			<th scope="col">j</th>
+			<th scope="col">words[]</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td><code>{ "Ruby", "C", "Python", "Java" }</code></td>
+			<td>0</td>
+			<td>1</td>
+			<td><code>{ "C",&nbsp;"Ruby", "Python", "Java" }</code></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><code>{ "C",&nbsp;"Ruby", "Python", "Java" }</code></td>
+			<td>0</td>
+			<td>2</td>
+			<td><code>{ "C",&nbsp;"Ruby", "Python", "Java" }</code></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><code>{ "C",&nbsp;"Ruby", "Python", "Java" }</code></td>
+			<td>0</td>
+			<td>3</td>
+			<td><code>{ "C",&nbsp;"Ruby", "Python", "Java" }</code></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td><code>{ "C",&nbsp;"Ruby", "Python", "Java" }</code></td>
+			<td>1</td>
+			<td>2</td>
+			<td><code>{ "C", "Python",&nbsp;"Ruby", "Java" }</code></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><code>{ "C", "Python",&nbsp;"Ruby", "Java" }</code></td>
+			<td>1</td>
+			<td>3</td>
+			<td><code>{ "C", "Java",&nbsp;"Ruby", "Python" }</code></td>
+		</tr>
+		<tr>
+			<td>Final</td>
+			<td><code>{ "C", "Java",&nbsp;"Ruby", "Python" }</code></td>
+			<td>2</td>
+			<td>3</td>
+			<td><code>{ "C", "Java", "Python",&nbsp;"Ruby" }</code></td>
+		</tr>
+	</tbody>
+</table></div>  </div>
+
+  
+  
+</div>
+
+                              </div>
+
+                            
+    
+    
+    
+    <div class="social-area">
+    <div class="social-area__col social-area__col-1"><label class="social-area__label">Share on: </label>
+        <div class="social-icon">
+            <a class="social-icon__link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.programiz.com/java-programming/examples/lexicographical-order-words"><svg class="programiz-icon programiz-icon--smallest"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#facebook"></use></svg></a>            <a class="social-icon__link" href="https://twitter.com/intent/tweet?text=Check%20this%20amazing%20article:%20Java%20Program%20to%20Sort%20Elements%20in%20Lexicographical%20Order%20(Dictionary%20Order)&amp;via=programiz&amp;url=https://www.programiz.com/java-programming/examples/lexicographical-order-words"><svg class="programiz-icon programiz-icon--smallest"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#twitter"></use></svg></a>        </div>
+    </div>
+
+    <div class="social-area__col social-area__col-2"><label class="social-area__label">Was this article helpful? </label>
+
+        <div class="social-icon" data-nid="1312"><button class="social-icon__link social-icon__link--negetive"><svg class="programiz-icon programiz-icon--smallest">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#thumbs-down"></use>
+                </svg></button><button class="social-icon__link social-icon__link--positive"><svg class="programiz-icon programiz-icon--smallest">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#thumbs-up"></use>
+                </svg></button></div>
+    </div>
+
+    <div class="page-feedback-form" style="display: none;">
+        <form class="webform-client-form webform-client-form-1680" action="https://www.programiz.com/java-programming/examples/lexicographical-order-words" method="post" id="webform-client-form-1680" accept-charset="UTF-8"><div><div class="form-item webform-component webform-component-markup webform-component--page-feedback-header">
+ <p class="font-weight-600" style="font-size: 18px;">Sorry about that</p>
+<label class="social-area__label" style="margin-top: 20px; font-size: 14px;">How can we improve it?</label>
+</div>
+<div class="row"><div class="col-md-12"><div class="form"><div class="form-item webform-component webform-component-textarea webform-component--dislike-feedback">
+  <label class="element-invisible" for="edit-submitted-dislike-feedback">Feedback <span class="form-required" title="This field is required.">*</span></label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea required="required" placeholder="Enter your message..." class="form__control form__control--textarea form-textarea required" id="edit-submitted-dislike-feedback" name="submitted[dislike_feedback]" cols="60" rows="5"></textarea><div class="grippie"></div></div>
+</div>
+</div></div></div><input type="hidden" name="details[sid]">
+<input type="hidden" name="details[page_num]" value="1">
+<input type="hidden" name="details[page_count]" value="1">
+<input type="hidden" name="details[finished]" value="0">
+<input type="hidden" name="form_build_id" value="form-EYT_WDhRFtUR5PMLC49AG4rCLp7V_aNyFPUA21y_ZFA">
+<input type="hidden" name="form_id" value="webform_client_form_1680">
+<div class="captcha"><input type="hidden" name="captcha_sid" value="53726531">
+<input type="hidden" name="captcha_token" value="5cf9e4e50568e2f1e304905cf7a13a4b">
+<input type="hidden" name="captcha_response" value="Google no captcha">
+<div class="g-recaptcha" data-sitekey="6LcpoEsUAAAAAP2oeouHeV70m85MUNlab8UrEqyL" data-theme="light" data-type="image"><div style="width: 304px; height: 78px;"><div><iframe src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/anchor.html" width="304" height="78" role="presentation" name="a-uu0zkdvrdlj5" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/saved_resource(2).html"></iframe></div></div><div class="form-actions"><div class="row"><div class="col-md-12 d-flex justify-content-start"><input class="webform-submit button-primary btn btn--primary btn--large btn--block-sp form-submit ajax-processed" type="submit" id="edit-submit" name="op" value="Submit"></div></div></div></div></form>    </div>
+</div>
+    
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom36790 {display:none; }
+    #div-gpt-ad-Programizcom36794 {display: block;}
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36790 {display: block;} #div-gpt-ad-Programizcom36794 {display: none;}}
+    </style>
+    
+    <div id="div-gpt-ad-Programizcom36790" style="margin: 36px 0;" min-height:="" 90px;="" class="pub-ad" data-google-query-id="CNvwwN_n5ewCFaOcSwUd8CkH9w">
+    <div id="google_ads_iframe_/8095840/.2_A.36790.3_Programiz.com_tier1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/8095840/.2_A.36790.3_Programiz.com_tier1_0" title="3rd party ad content" name="google_ads_iframe_/8095840/.2_A.36790.3_Programiz.com_tier1_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-google-container-id="3" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/saved_resource(3).html"></iframe></div></div>
+    
+    <div id="div-gpt-ad-Programizcom36794" style="margin: 36px 0;" min-height:="" 250px;="" class="pub-ad">
+    </div>
+                
+          </div>
+        </div>
+      </div>
+      <hr>
+
+                
+    
+    
+    
+    <div class="view view-similar-python-programming-examples view-id-similar_python_programming_examples view-display-id-block_3 above-bottom-recommended-articles view-dom-id-1e87914ff5090f1ef38726cf2422144d">
+        
+  
+  
+      <div class="view-content">
+      <div class="row"><div class="col-sm-12"><h3 class="grouped-card-title">Related Examples</h3></div><div class="col-md-6 col-lg-3"><a href="https://www.programiz.com/java-programming/examples/compute-all-string-permutation"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--1"><p class="card__title">Java Example</p><p class="card__description">Compute all the permutations of the string</p></div></a></div><div class="col-md-6 col-lg-3"><a href="https://www.programiz.com/java-programming/examples/quick-sort"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--2"><p class="card__title">Java Example</p><p class="card__description">Implement Quick Sort Algorithm</p></div></a></div><div class="col-md-6 col-lg-3"><a href="https://www.programiz.com/java-programming/examples/bubble-sort"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--3"><p class="card__title">Java Example</p><p class="card__description">Implement Bubble Sort algorithm</p></div></a></div><div class="col-md-6 col-lg-3"><a href="https://www.programiz.com/java-programming/examples/merge-sort"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--4"><p class="card__title">Java Example</p><p class="card__description">Implement Merge Sort Algorithm</p></div></a></div></div></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>
+              </div>
+  
+
+      <footer class="footer">
+        
+    
+    
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="mauticform_wrapper_generalsubscribersformmobile" class="sp-footer-form d-block d-md-none mauticform_wrapper">
+                <form autocomplete="false" role="form" method="post" action="https://email.programiz.com/form/submit?formId=9" id="mauticform_generalsubscribersformmobile" data-mautic-form="generalsubscribersformmobile" enctype="multipart/form-data" class="card card--even-spaced card--shadowed-up card--no-border" target="mauticiframe_generalsubscribersformmobile">
+                    <div class="mauticform-error" id="mauticform_generalsubscribersformmobile_error"></div>
+                    <div class="mauticform-message" id="mauticform_generalsubscribersformmobile_message"></div>
+                    <div class="mauticform-innerform">
+                        <div class="footer__form__title">Join our newsletter for the latest updates.</div>
+                        
+                        <div class="mauticform-page-wrapper mauticform-page-1 input-group" data-mautic-form-page="1">
+
+                            <div id="mauticform_generalsubscribersformmobile_email1" class="mauticform-row mauticform-email mauticform-field-1 mauticform-required input-group" data-validate="email1" data-validation-type="email">
+                                <input id="mauticform_input_generalsubscribersformmobile_email1" name="mauticform[email1]" value="" placeholder="Enter Email Address*" class="mauticform-input input-group__control" type="email">
+                                <span class="mauticform-errormsg" style="display: none;">This is required.</span>
+                            </div>
+
+                            <div id="mauticform_generalsubscribersformmobile_submit" class="mauticform-row mauticform-button-wrapper mauticform-field-2 input-group">
+                                <button type="submit" name="mauticform[submit]" id="mauticform_input_generalsubscribersformmobile_submit" value="" class="mauticform-button input-group__action btn btn--primary">Join</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="mauticform[formId]" id="mauticform_generalsubscribersformmobile_id" value="9">
+                    <input type="hidden" name="mauticform[return]" id="mauticform_generalsubscribersformmobile_return" value="">
+                    <input type="hidden" name="mauticform[formName]" id="mauticform_generalsubscribersformmobile_name" value="generalsubscribersformmobile">
+
+                <input type="hidden" name="mauticform[messenger]" id="mauticform_generalsubscribersformmobile_messenger" value="1"></form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-4 col-lg-5 col-md-6 d-none d-md-block">
+            <div class="footer__content"><object class="footer__logo" data="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/logo_white.svg" type="image/svg+xml"></object>
+                <div class="mauticform_wrapper" id="mauticform_wrapper_generalsubscribersform">
+                    <form action="https://email.programiz.com/form/submit?formId=6" autocomplete="false" class="footer__form" data-mautic-form="generalsubscribersform" enctype="multipart/form-data" id="mauticform_generalsubscribersform" method="post" role="form" target="mauticiframe_generalsubscribersform">
+                        <div class="mauticform-error" id="mauticform_generalsubscribersform_error"></div>
+                        <div class="mauticform-message" id="mauticform_generalsubscribersform_message"></div>
+                        <div class="mauticform-innerform">
+                            <div class="footer__form__title">Join our newsletter for the latest updates.</div>
+                            <div class="mauticform-page-wrapper mauticform-page-1 input-group" data-mautic-form-page="1">
+                                <div class="mauticform-row mauticform-email mauticform-field-1 mauticform-required input-group" data-validate="email1" data-validation-type="email" id="mauticform_generalsubscribersform_email1">
+                                    <input class="mauticform-input input-group__control" id="mauticform_input_generalsubscribersform_email1" name="mauticform[email1]" placeholder="Enter Email Address*" type="email" value="">
+                                    <span class="mauticform-errormsg" style="display: none;">This is required.</span>
+                                </div>
+                                <div class="mauticform-row mauticform-button-wrapper mauticform-field-2 input-group" id="mauticform_generalsubscribersform_submit">
+                                    <button class="mauticform-button input-group__action btn btn--primary" id="mauticform_input_generalsubscribersform_submit" name="mauticform[submit]" type="submit" value="">Join</button>
+                                </div>
+                            </div>
+                        </div>
+                        <input id="mauticform_generalsubscribersform_id" name="mauticform[formId]" type="hidden" value="6">
+                        <input id="mauticform_generalsubscribersform_return" name="mauticform[return]" type="hidden" value="">
+                        <input id="mauticform_generalsubscribersform_name" name="mauticform[formName]" type="hidden" value="generalsubscribersform">
+                    <input type="hidden" name="mauticform[messenger]" id="mauticform_generalsubscribersform_messenger" value="1"></form>
+                </div>
+                <div class="footer__vendor-btn">
+                    <div class="footer__vendor-btn__row"><a href="https://play.google.com/store/apps/details?id=com.programiz.learnpython&amp;referrer=utm_campaign%3Dprogramiz-footer%26utm_source%3Dprogramiz-website" title="Learn Python: Programiz on Play Store"><img class="app-download-btn app-download-btn--offset" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/playstore.svg"> </a></div>
+
+                    <div class="footer__vendor-btn__row"><a href="https://apps.apple.com/app/apple-store/id1472188189?pt=120228772&amp;ct=programiz-footer&amp;mt=8" title="Learn Python: Programiz on App Store"><img class="app-download-btn" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/appstore.svg"> </a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-xs-6">
+            <div class="footer__link-area">
+                <h4 class="footer__link-area__title">Tutorials</h4>
+
+                <ul class="footer__links">
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/python-programming" title="Python Tutorials">Python 3 Tutorial</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/javascript" title="JavaScript Tutorial">JavaScript Tutorial</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/c-programming" title="C Tutorial">C Tutorial</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/java-programming" title="Java Tutorial">Java Tutorial</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/kotlin-programming" title="Kotlin Tutorial">Kotlin Tutorial</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/cpp-programming" title="C++ Tutorial">C++ Tutorial</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/swift-programming" title="Swift Tutorial">Swift Tutorial</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/csharp-programming" title="C# Tutorial">C# Tutorial</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/dsa" title="Data Structures and Algorithms">DSA Tutorial</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-2  col-md-3 col-xs-6">
+            <div class="footer__link-area">
+                <h4 class="footer__link-area__title">Examples</h4>
+
+                <ul class="footer__links">
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/python-programming/examples" title="Python Examples">Python Examples</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/javascript/examples" title="JavaScript Examples">JavaScript Examples</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/c-programming/examples" title="C Examples">C Examples</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/java-programming/examples" title="Java Examples">Java Examples</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/kotlin-programming/examples" title="Kotlin Examples">Kotlin Examples</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/cpp-programming/examples" title="C++ Examples">C++ Examples</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-xs-6">
+            <div class="footer__link-area">
+                <h4 class="footer__link-area__title">Company</h4>
+
+                <ul class="footer__links">
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/about-us" title="About us">About</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/advertise" title="Advertise with us">Advertising</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/contact" title="Contact us">Contact</a></li>
+                    <li class="footer__links__nodes"><a title="Blog" href="https://www.programiz.com/blog" class="link-node">Blog</a></li>
+                    <li class="footer__links__nodes"><a title="Programiz on Youtube" href="https://www.youtube.com/channel/UCREFp3D_n8JfcDonlm7Mpyw" class="link-node">Youtube</a></li>
+            </ul></div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-xs-6">
+            <div class="footer__link-area">
+                <h4 class="footer__link-area__title">Legal</h4>
+
+                <ul class="footer__links">
+                    <li class="footer__links__nodes"><a class="link-node" id="unic-gdpr" onclick="__tcfapi(&quot;openunic&quot;);return false;" style="display:none;cursor:pointer;">Change Ad Consent</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" id="unic-ccpa" onclick="window.__uspapi(&#39;openunic&#39;)" style="display:none;cursor:pointer;">Do not sell my data</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="https://www.programiz.com/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="sp-brand-area d-block d-md-none">
+        <div class="d-flex justify-content-center"><img class="sp-brand-area__logo" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/logo_white(1).svg"></div>
+
+        <div class="d-flex justify-content-center">
+            <div class="footer__vendor-btn__row"><a href="https://play.google.com/store/apps/details?id=com.programiz.learnpython&amp;referrer=utm_campaign%3Dprogramiz-footer%26utm_source%3Dprogramiz-website" title="Learn Python: Programiz on Play Store"><img class="app-download-btn app-download-btn--offset" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/playstore.svg"> </a></div>
+
+            <div class="footer__vendor-btn__row"><a href="https://apps.apple.com/app/apple-store/id1472188189?pt=120228772&amp;ct=programiz-footer&amp;mt=8" title="Learn Python: Programiz on App Store"><img class="app-download-btn" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/appstore.svg"> </a></div>
+        </div>
+    </div>
+
+    <div class="footer__end">
+        <p class="copyright-text">© Parewa Labs Pvt. Ltd. All rights reserved.</p>
+
+        <div class="social-icons"><a class="social-icons__links" href="https://www.facebook.com/programiz" title="Programiz on Facebook"><svg class="programiz-icon programiz-icon--small">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#facebook"></use>
+                </svg> </a> <a class="social-icons__links" href="https://www.instagram.com/_programiz/" title="Programiz on Instagram"> <svg class="programiz-icon programiz-icon--small">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#instagram"></use>
+                </svg> </a> <a class="social-icons__links" href="https://www.linkedin.com/company/programiz" title="Programiz on Linkedin"> <svg class="programiz-icon programiz-icon--small ">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#linkedin"></use>
+                </svg> </a> <a class="social-icons__links" href="https://twitter.com/programiz" title="Programiz on Twitter"> <svg class="programiz-icon programiz-icon--small">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#twitter"></use>
+                </svg> </a></div>
+    </div>
+</div>
+
+<script>
+(function waitGEO() {
+    var readyGEO;
+    if (window['UnicI'] && window['UnicI'].geo && window['UnicI'].geo !== '-' ) {
+        readyGEO = true;
+        console.log(window['UnicI'].geo);
+        if (window['UnicI'].geo === 'EU') {
+            if(document.getElementById("unic-gdpr")) {
+              document.getElementById("unic-gdpr").style.display = 'block';
+            }
+        }
+        if (window['UnicI'].geo === 'CA') {
+            if(document.getElementById("unic-ccpa")) {
+              document.getElementById("unic-ccpa").style.display = 'block';
+            }
+        }
+    }
+    if (!readyGEO) {
+        setTimeout(waitGEO, 200);
+    }
+})();
+</script>
+        </footer>
+  </main>
+  
+
+
+<iframe id="mauticiframe_javasubscribersform" name="mauticiframe_javasubscribersform" style="display: none; margin: 0px; padding: 0px; border: none; width: 0px;" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/saved_resource(4).html"></iframe><iframe id="mauticiframe_generalsubscribersformmobile" name="mauticiframe_generalsubscribersformmobile" style="display: none; margin: 0px; padding: 0px; border: none; width: 0px;" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/saved_resource(5).html"></iframe><iframe id="mauticiframe_generalsubscribersform" name="mauticiframe_generalsubscribersform" style="display: none; margin: 0px; padding: 0px; border: none; width: 0px;" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/saved_resource(6).html"></iframe><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/bframe.html" name="c-uu0zkdvrdlj5" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><div id="ACNWONZU3AF2Q3" class="adsbya" style="display: none;"></div><iframe src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/iu3.html" style="display: none;"></iframe><iframe id="google_osd_static_frame_8831695651631" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/saved_resource(7).html"></iframe></body><iframe sandbox="allow-scripts allow-same-origin" id="34c533a68dfabdb" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/usync.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="35aae1f9cf6fbe1" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/async_usersync.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="3679e0762c643d5" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/ixmatch.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="37eeb5367b69a" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/check.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="38829d522b90b3d" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="./Java Program to Sort Elements in Lexicographical Order (Dictionary Order)_files/pd.html">
+    </iframe></html>

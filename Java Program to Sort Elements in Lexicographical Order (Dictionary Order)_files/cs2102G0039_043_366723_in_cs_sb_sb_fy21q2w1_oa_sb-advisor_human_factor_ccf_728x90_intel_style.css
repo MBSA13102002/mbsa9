@@ -1,0 +1,199 @@
+/*-------------------------------------
+  Reset
+---------------------------------------*/
+
+/******Basic settings**********/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+img{
+  border: 0px;
+}
+a{
+  text-decoration: none;
+}
+body{
+    font-family: 'Roboto', sans-serif; color: #FFFFFF;
+}
+sup {
+  vertical-align: 5px;
+  line-height: 0;
+}
+.font-preloader{
+  font-family:'Roboto';
+  font-weight:300;
+  visibility:hidden;
+  width:0;
+  height:0;
+}
+#frame_one, #frame_two,#frame_three,#frame_four,#frame_five {
+  width: 100%;
+  height: 100%;
+}
+
+/*-------------------------------------
+  Layout
+---------------------------------------*/
+
+#ad {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#banner {
+  position: absolute;
+  background: #eeeeee;
+  display: block;
+  width: 728px;
+  height: 90px;
+  overflow: hidden;
+  cursor: pointer;
+  visibility: hidden;
+  border: 1px solid #444;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#clickTAG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.ie-fallback{
+  position: absolute;
+  z-index: 9999;
+  top: -1px;
+  left: -1px;
+}
+
+/*-------------------------------------
+  Frame One frame duration: 3s
+---------------------------------------*/
+
+.bg, .last-bg, .call{
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+.title1 {
+  position: absolute;
+  font-size: 19px;
+  line-height: 23px;
+  font-weight: 700;
+  text-align: left;
+  color: #ffffff;
+  top: 22px;
+  left: 35px;
+  letter-spacing: 0.04em;
+}
+
+
+
+/*-------------------------------------
+  Frame two  frame duration: 3s
+---------------------------------------*/
+.title2 {
+  position: absolute;
+  font-size: 19px;
+  line-height: 23px;
+  font-weight: 700;
+  text-align: left;
+  color: #ffffff;
+  top: 22px;
+  left: 35px;
+  letter-spacing: 0.04em;
+}
+
+
+/*-------------------------------------
+ Frame Four  frame duration: 3s
+---------------------------------------*/
+
+.title4 {
+	width: 100%;
+    position: absolute;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: left;
+    color: #ffffff;
+    bottom: 4px;
+    left: 19px;
+    letter-spacing: 0.04em;
+}
+
+.dt_logo_last{
+  top: -1px;
+  left: -1px;
+  position: absolute;
+}
+
+.cta{
+position: absolute;
+    color: #ffffff;
+    border: #ffffff 2px solid;
+    text-align: center;
+    left: 461px;
+    bottom: 16px;
+    display: block;
+    z-index: 99;
+    padding: 6px 15px 5px 15px;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    vertical-align: middle;
+}
+@-moz-document url-prefix() {
+  .cta { padding: 6px 15px 5px 15px;}
+}
+
+.intel_logo_last, .product {
+  top: -1px;
+  left: -1px;
+  position: absolute;
+}
+.product-text {
+	width: 200px;
+  position: absolute;
+  left: 492px;
+  bottom: 11px;
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+
+.replay {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+  right:2px;
+  top:2px;
+  cursor: pointer;
+  z-index: 9999;
+}

@@ -1,0 +1,39 @@
+var banner = document.getElementById('banner');
+var replay = document.getElementById('replay');
+
+var tl = new TimelineMax({repeat:0, repeatDelay:2.5});
+
+
+window.onload = function() {   
+    
+  tl.set(banner, {visibility: "visible"})
+
+	/*frame one*/
+	.from(".bg ",0, { alpha:0, ease:Power4.easeout}, "frame1")
+	.staggerFrom(".title1", 1.25, {y:0, alpha:0,  ease: Quad.easeInOut}, ".5", "frame1")
+	.to(".title1", .75, { alpha:0,  ease:Quad.easeInOut}, "frame1+=3")
+	.to(".bg ",7, { x:-337, ease:Quad.easeInOut}, "frame1")
+
+	/*frame two*/
+	.add("frame2","frame1+=3.5")	
+	.staggerFrom(".title2", 1.25, {y:0, alpha:0,  ease: Quad.easeInOut}, "1", "frame2")
+	// .to(".bg ",.7, { x:-337, ease:Quad.easeInOut}, "frame2+=3")	
+	.to(".bg,.title2 ",1, { y:-90, ease:Quad.easeInOut}, "frame2+=3.5")
+
+	/*frame three*/
+	.add("frame3","frame2+=3.5")
+	.from(".last-bg", 1, {y:90,  ease:Quad.easeInOut}, "frame3")
+	.from(".dt_logo_last, .intel_logo_last, .product-text, .cta, .title4, .product, .call", 1, {y:90, alpha:0,  ease:Quad.easeInOut}, "frame3")
+    .to(".replay", .3, {autoAlpha:1, visibility: "visible", display:'block', ease: Sine.easeOut});
+    
+
+    //----- Reply ------
+      replay.addEventListener("click", function(){
+          tl.restart();
+      });
+    
+    // tl.seek("loop")
+
+    var currentDuration = tl.duration();
+    console.log(currentDuration);   
+};
