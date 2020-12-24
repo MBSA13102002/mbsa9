@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="number" id="hour" placeholder="hour"><br>
+<input type="number" id="minute" placeholder="minute"><br><br>
+<input type="number" id="year" placeholder="year"><br><br>
+<input type="number" id="month" placeholder="month"><br><br>
+<input type="number" id="date" placeholder="date"><br><br>
+<input type="text" id="title" placeholder="title"><br><br>
+<input type="text" id="message" placeholder="message"><br><br>
+<button onclick="task()">TASK</button>
+<script>
+    function task(){
+        var hour=document.getElementById("hour").value;
+        var minute=document.getElementById("minute").value;
+        var year=document.getElementById("year").value;
+        var month=document.getElementById("month").value;
+        var date=document.getElementById("date").value;
+        var title=document.getElementById("title").value;
+        var message=document.getElementById("message").value;
+        var hours = parseInt(hour);
+        var minutes = parseInt(minute);
+        var years = parseInt(year);
+        var months = parseInt(month);
+        var Months = months-1
+        var dates = parseInt(date);
+        Android.notification(hours,minutes,years,Months,dates,title,message);
+
+    }
+</script>
+</body>
+</html>

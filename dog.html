@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery MDTimePicker: Material Time Picker Demo</title>
+    <!-- ================================================================================= -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- ============================================================== -->
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="mdtimepicker.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    .ui-datepicker-trigger {
+      max-height: 25px;
+    }
+    .mnb{
+  
+      margin-left:80px;
+      
+      
+    }
+    .white{
+      border-radius:7px;
+    }
+    .black{
+      border:3px solid black;
+      border-radius:10px;
+    }
+    .red{
+      color:red;
+    }
+  </style>
+
+</head>
+
+<body>
+<h1 class="text-center black"><b>NEW TASK</b></h1>
+<div id="timeblock" class="mnb">
+<label class="black"><b>TIME:-</b></label><br>
+<input type="text" id="timepicker" class="white" placeholder="Time"/><br>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="mdtimepicker.js"></script>
+<script>
+    $(document).ready(function () {
+      $('#timepicker').mdtimepicker(); //Initializes the time picker
+    });
+  </script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+<!-- ===================================================================== -->
+<div id="dateblock" class="mnb">
+<form class="form-group">
+    <br><label class="black"><b>DATE:-</b></label><br>
+    <input id="txtdate" type="text"  placeholder="click on calendar" class="white">
+</form>
+<label class="black"><b>TITLE:-</b></label><br>
+<input type="text" id="title" placeholder="Title of Alarm" class="white"><br><br>
+<label class="black"><b>MESSAGE:-</b></label><br>
+<input type="text" id="message" placeholder="Message of Alarm" class="white"><br><br>
+<button  id="task" type="button" class="btn btn-primary white">SET TASK</button><br><br><br><br>
+</div>
+<div id="items" class="my-0">
+    <h2 class="red"><b>YOUR TASKS:-</b></h2>
+    <table class="table" class="white">
+        <thead class="red">
+        <tr>
+            <th scope="col">SNo</th>
+            <th scope="col">TITLE</th>
+            <th scope="col">MESSAGE</th>
+            <th scope="col">Time & Date</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody id="tableBody">
+        <tr>
+            <th scope="row">1</th>
+            <td>Get some Coffee</td>
+            <td>You need coffee as you are a coder</td>
+            <td>DFESGRGRGRG</td>
+            <td><button class="btn btn-sm btn-primary">Delete</button></td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script> -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+<!-- Importing jquery cdn -->
+<link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="Stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js">
+</script>
+
+<!-- JavaScript function to display the calendar -->
+<script language="javascript">
+    $(document).ready(function () {
+      $("#txtdate").datepicker({
+        showOn: "button",
+
+        // Button image stored on local device
+        buttonImage: "https://media.geeksforgeeks.org/wp-content/uploads/20200906201101/date21.png",
+        buttonImageOnly: true
+      });
+    });
+  </script>
+<script>
+// <!--========================================================================================================================================================-->
+            function getAndUpdate(code){
+// <!-/-                console.log("Updating List...");-->s
+                tit = document.getElementById("title").value;
+                desc = document.getElementById("message").value;
+                time = document.getElementById("timepicker").value;
+                date = document.getElementById("txtdate").value;
+                var codes = code;
+                if (localStorage.getItem('itemsJson')==null){
+                    itemJsonArray = [];
+                    itemJsonArray.push([tit, desc,time,date,codes]);
+                    localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+                }
+                else{
+                    itemJsonArrayStr = localStorage.getItem('itemsJson')
+                    itemJsonArray = JSON.parse(itemJsonArrayStr);
+                    itemJsonArray.push([tit, desc,time,date,codes]);
+                    localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
+                }
+                update();
+            }
+
+            function update(){
+                if (localStorage.getItem('itemsJson')==null){
+                    itemJsonArray = [];
+                    localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+                }
+                else{
+                    itemJsonArrayStr = localStorage.getItem('itemsJson')
+                    itemJsonArray = JSON.parse(itemJsonArrayStr);
+
+                // Populate the table
+                let tableBody = document.getElementById("tableBody");
+                let str = "";
+                itemJsonArray.forEach((element, index) => {
+                    str += `
+                    <tr>
+                    <th scope="row">${index + 1}</th>
+                    <td>${element[0]}</td>
+                    <td>${element[1]}</td>
+                    <td>${element[2]+"\n"+element[3]}</td>
+                    <td><button class="btn btn-sm btn-primary" onclick="deleted(${index},${element[4]})">Delete</button></td>
+                    </tr>`;
+                });
+                tableBody.innerHTML = str;
+             }
+            }
+
+            function deleted(itemIndex,code){
+                itemJsonArrayStr = localStorage.getItem('itemsJson')
+                itemJsonArray = JSON.parse(itemJsonArrayStr);
+                // Delete itemIndex element from the array
+                itemJsonArray.splice(itemIndex, 1);
+                localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
+                Android.deleting(code);
+                update();
+
+            }
+            function clearStorage(){
+                if (confirm("Do you areally want to clear?")){
+                console.log('Clearing the storage')
+                localStorage.clear();
+                update();
+                }
+            }
+// <!--=====================================================================================================================================================-->
+    function task() {
+      var time = document.getElementById("timepicker").value
+      // console.log(time)
+      var date_imp = document.getElementById("txtdate").value
+      // console.log(date_imp)
+      var reverse = reverseString(time)
+      var meridian = reverse.slice(0, 2);
+      // console.log(meridian)
+      var minute = reverse.slice(3, 5);
+      var minute_reverse = reverseString(minute);
+      // console.log(minute_reverse )//
+      var hour = reverse.slice(6, reverse.length);
+      var hour_reverse = reverseString(hour);
+      // console.log(hour_reverse)//
+      var hours = parseInt(hour_reverse);
+      // console.log(hours)//
+      var minutes = parseInt(minute_reverse);
+      // console.log(minutes)//
+      var year = date_imp.slice(6, 10);
+      var month = date_imp.slice(0, 2);
+      // console.log(month)//
+      var date = date_imp.slice(3, 5);
+      // console.log(date)//
+      var years = parseInt(year)
+      // console.log(years)//
+      var months = parseInt(month)
+      // console.log(months)//
+      var dates = parseInt(date)
+      var title = document.getElementById("title").value;
+      var message = document.getElementById("message").value;
+      var codes = Math.random().toString().slice(2,11);
+      var code = parseInt(codes);
+     getAndUpdate(code);
+      if (meridian == "MP") {
+        newhours = hours + 12
+        if (newhours == 24) {
+          newhours = 0;
+          Android.notification(newhours, minutes, years, months-1, dates, title, message,codes,code);
+        } else {
+          Android.notification(newhours, minutes, years, months-1, dates, title, message,codes,code);
+        }
+      } else {
+        if(hours==12){
+           hours=0;
+        Android.notification(hours, minutes, years, months-1, dates, title, message,codes,code);
+        } else{
+        Android.notification(hours, minutes, years, months-1, dates, title, message,codes,code);
+        }
+      }
+     document.getElementById("timepicker").value="";
+     document.getElementById("txtdate").value="";
+     document.getElementById("title").value="";
+     document.getElementById("message").value="";
+    }
+    function reverseString(str) {
+      var splitString = str.split("");
+      var reverseArray = splitString.reverse();
+      var joinArray = reverseArray.join("");
+      return joinArray;
+    }
+    btn=document.getElementById("task");
+     btn.addEventListener("click", task);
+     update();
+  </script>
+<!-- Customizing the datepicker button image -->
+
+</body>
+
+</html>
+
