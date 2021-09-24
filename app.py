@@ -8,14 +8,14 @@ def handle_catch(caller, on_exception):
          return on_exception
 
 config = {
-    "apiKey": "AIzaSyCiLNaJMak6yrWdYfg-LqAz1EbBPmDmPXs",
-   "authDomain": "todowebflaskapp.firebaseapp.com",
-    "databaseURL": "https://todowebflaskapp-default-rtdb.firebaseio.com",
-    "projectId": "todowebflaskapp",
-    "storageBucket": "todowebflaskapp.appspot.com",
-    "messagingSenderId": "817348374426",
-    "appId": "817348374426",
-    "measurementId": "G-K2EZGZZCZT"
+   "apiKey": "AIzaSyBBXsvkN8KdwcCJlJx7n-plwZ8NLDVyu1I",
+    "authDomain": "to-do-om.firebaseapp.com",
+    "databaseUR"L: "https://to-do-om-default-rtdb.firebaseio.com",
+    "projectId": "to-do-om",
+    "storageBucket": "to-do-om.appspot.com",
+    "messagingSenderId": "805281315065",
+    "appId": "1:805281315065:web:cd75e2bee2165951f84a28",
+    "measurementId": "G-GJ98CQYFCG"
 }
 firebase = Firebase(config)
 db = firebase.database()
