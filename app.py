@@ -10,7 +10,7 @@ def handle_catch(caller, on_exception):
 config = {
    "apiKey": "AIzaSyBBXsvkN8KdwcCJlJx7n-plwZ8NLDVyu1I",
     "authDomain": "to-do-om.firebaseapp.com",
-    "databaseUR"L: "https://to-do-om-default-rtdb.firebaseio.com",
+    "databaseURL": "https://to-do-om-default-rtdb.firebaseio.com",
     "projectId": "to-do-om",
     "storageBucket": "to-do-om.appspot.com",
     "messagingSenderId": "805281315065",
