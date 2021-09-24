@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBSA TASKS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% macro catch(on_exception) %}
+    {{ handle_catch(caller, on_exception) }}
+    {% endmacro %}
+    <div class="container-fluid">
+        <h1 class="text-center">Tasks to be Accomplished</h1>
+        <center>
+
+            <form action="/" method="POST" onsubmit=" return changed()">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">NEW
+                    TASK</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Enter New Task</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="editor_exp" style="background-color: white;">
+                                    <p>Write Task Here</p>
+                                    <p><br></p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="addtask()">ADD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="text" name="htmldata" id="htmldata" style="display: none;">
+                <button id="saveall" type="submit" class="btn btn-primary">SAVE ALL</button>
+            </form>
+        </center>
+        <div class="row" id="taskarea" >
+            {% call catch('') %}
+
+            {% endcall %}
+
+        </div>
+    </div>
+    <script>
+
+        function htmlDecode(input) {
+            var doc = new DOMParser().parseFromString(input, "text/html");
+            return doc.documentElement.textContent;
+        }
+        function HtmlEncode(s) {
+            var el = document.createElement("div");
+            el.innerText = el.textContent = s;
+            s = el.innerHTML;
+            return s;
+        }
+        function HtmlEncoding(s) {
+            return s.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+
+        }
+        function makeid(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() *
+                    charactersLength));
+            }
+            return result;
+        }
+
+        function addtask() {
+            var id = makeid(10)
+            var myEditor = document.querySelector('#editor_exp')
+            var html = myEditor.children[0].innerHTML
+
+            document.getElementById('taskarea').innerHTML += `<div  id="div_${id}" class="card m-2" style="width: 18rem;">
+               
+                <div class="card-body">
+                    <i class="fa fa-arrow-up " aria-hidden="true" style="cursor:pointer" id="up_${id}" onclick = "navigate_up(this)"></i>
+                    <i class="fa fa-times" aria-hidden="true" id=${id} style="font-size:20px;float:right;cursor:pointer;" onclick="RemoveTask(this)"></i><br>
+                    <div  contentEditable="true" style="outline:none;">
+                        <p class="card-text">${html}</p>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkbox_${id}">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            High Priority
+                        </label>
+                    </div>
+                    <i class="fa fa-arrow-down " aria-hidden="true" style="cursor:pointer" id="down_${id}" onclick = "navigate_down(this)"></i>
+                </div>
+                
+            </div>`
+            document.getElementById("htmldata").value = document.getElementById("taskarea").innerHTML
+            var checkbox = document.getElementById(`checkbox_${id}`);
+
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+                    this.parentElement.parentElement.parentElement.classList.add("text-white")
+                    document.getElementById("htmldata").value = document.getElementById("taskarea").innerHTML
+                } else {
+                    this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+                    this.parentElement.parentElement.parentElement.classList.remove("text-white")
+                    document.getElementById("htmldata").value = document.getElementById("taskarea").innerHTML
+
+                }
+            });
+        }
+
+        function RemoveTask(elem) {
+            a = confirm("Sure??")
+            if (a) {
+                document.getElementById(`div_${elem.id}`).remove()
+                document.getElementById("htmldata").value = document.getElementById("taskarea").innerHTML
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        function changed() {
+            a = confirm("Submit?")
+            document.getElementById("htmldata").value = document.getElementById("taskarea").innerHTML
+            if (a) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        document.getElementById("htmldata").value = htmlDecode("{{htmldata_from_firebase}}")
+        document.getElementById("taskarea").innerHTML = htmlDecode("{{htmldata_from_firebase}}")
+        inputs = document.querySelectorAll('.bg-danger > div >div >input')
+
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].checked = true;
+        }
+        try {
+            var checkbox = document.querySelectorAll('input[type=checkbox]');
+            for (let i = 0; i < checkbox.length; i++) {
+                checkbox[i].addEventListener('change', function () {
+                    if (this.checked) {
+                        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+                        this.parentElement.parentElement.parentElement.classList.add("text-white")
+                        document.getElementById("htmldata").value = document.getElementById("taskarea").innerHTML
+                    } else {
+                        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+                        this.parentElement.parentElement.parentElement.classList.remove("text-white")
+                        document.getElementById("htmldata").value = document.getElementById("taskarea").innerHTML
+
+                    }
+                });
+            }
+        }
+        catch (err) {
+
+        }
+        function navigate_up(elem) {
+            allcards = document.getElementsByClassName("card")
+            _id = elem.id.split("_")[1]
+            for (let i = 0; i < allcards.length; i++) {
+                if (allcards[i].id == "div_" + _id) {
+                    id_1 = allcards[i - 1].id
+                    id_2 = allcards[i].id
+                    swap_divs(id_1, id_2)
+
+                }
+            }
+        }
+        function navigate_down(elem) {
+            allcards = document.getElementsByClassName("card")
+            _id = elem.id.split("_")[1]
+            for (let i = 0; i < allcards.length; i++) {
+                if (allcards[i].id == "div_" + _id) {
+                    id_1 = allcards[i + 1].id
+                    id_2 = allcards[i].id
+                    swap_divs(id_1, id_2)
+
+                }
+            }
+
+
+        }
+        function swap_divs(id_1, id_2) {
+            try {
+                jQuery(document).ready(function () {
+
+                    div1 = jQuery(`#${id_1}`);
+                    div2 = jQuery(`#${id_2}`);
+
+                    tdiv1 = div1.clone();
+                    tdiv2 = div2.clone();
+
+                    if (!div2.is(':empty')) {
+                        div1.replaceWith(tdiv2);
+                        div2.replaceWith(tdiv1);
+                    }
+
+
+                });
+            }
+            catch (err) {
+
+            }
+
+        }
+
+
+    </script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        var quill = new Quill('#editor_exp', {
+            theme: 'snow'
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
